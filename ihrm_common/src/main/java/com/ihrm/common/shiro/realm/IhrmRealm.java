@@ -14,11 +14,13 @@ import java.util.Set;
 //公共的realm：获取安全数据，构造权限信息
 public class IhrmRealm  extends AuthorizingRealm {
 
+    @Override
     public void setName(String name) {
         super.setName("ihrmRealm");
     }
 
     //授权方法
+    @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
         //1.获取安全数据
         ProfileResult result = (ProfileResult)principalCollection.getPrimaryPrincipal();
@@ -31,6 +33,7 @@ public class IhrmRealm  extends AuthorizingRealm {
     }
 
     //认证方法
+    @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
         return null;
     }
