@@ -13,6 +13,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @author lenovo
+ */
 public class UserRealm extends IhrmRealm {
 
     @Autowired
@@ -22,6 +25,7 @@ public class UserRealm extends IhrmRealm {
     private PermissionService permissionService;
 
     //认证方法
+    @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
         //1.获取用户的手机号和密码
         UsernamePasswordToken upToken = (UsernamePasswordToken) authenticationToken;

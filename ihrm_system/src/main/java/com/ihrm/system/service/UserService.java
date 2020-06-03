@@ -140,7 +140,7 @@ public class UserService extends BaseService{
                 List<Predicate> list = new ArrayList<>();
                 //根据请求的companyId是否为空构造查询条件
                 if(!StringUtils.isEmpty(map.get("companyId"))) {
-                    list.add(criteriaBuilder.equal(root.get("companyId").as(String.class),(String)map.get("companyId")));
+                    list.add(criteriaBuilder.equal(root.get("companyId").as(String.class), map.get("companyId")));
                 }
                 //根据请求的部门id构造查询条件
                 if(!StringUtils.isEmpty(map.get("departmentId"))) {
@@ -148,7 +148,7 @@ public class UserService extends BaseService{
                 }
                 if(!StringUtils.isEmpty(map.get("hasDept"))) {
                     //根据请求的hasDept判断  是否分配部门 0未分配（departmentId = null），1 已分配 （departmentId ！= null）
-                    if("0".equals((String) map.get("hasDept"))) {
+                    if("0".equals(map.get("hasDept"))) {
                         list.add(criteriaBuilder.isNull(root.get("departmentId")));
                     }else {
                         list.add(criteriaBuilder.isNotNull(root.get("departmentId")));
