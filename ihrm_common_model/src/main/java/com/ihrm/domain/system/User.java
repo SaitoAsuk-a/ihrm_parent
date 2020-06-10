@@ -5,6 +5,7 @@ import com.ihrm.domain.poi.ExcelAttribute;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.crazycake.shiro.AuthCachePrincipal;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -134,4 +135,5 @@ public class User implements Serializable {
             inverseJoinColumns={@JoinColumn(name="role_id",referencedColumnName="id")}
     )
     private Set<Role> roles = new HashSet<Role>();//用户与角色   多对多
+
 }

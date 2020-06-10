@@ -1,4 +1,4 @@
-package com.ihrm.system;
+package com.ihrm.system.config;
 
 import com.ihrm.common.interceptor.JwtInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
